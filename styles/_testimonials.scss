@@ -18,7 +18,7 @@
 }
 .testimonials{
     .user{
-        width: 350px;
+        max-width: 350px;
         @include flexCenter;
         align-items: flex-start;
         flex-direction: column;

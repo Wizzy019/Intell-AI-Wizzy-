@@ -42,7 +42,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px;
 }
@@ -171,105 +170,90 @@ html, body {
   display: none;
 }
 
-#hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-#hero .hero {
+#hero .hero-container {
   display: grid;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 15px;
-  grid-template-rows: minmax(100px, auto);
-  gap: 15px;
-  margin: 30px 0;
-  width: 70%;
-  z-index: 1;
+  grid-template-rows: auto auto auto;
+  place-items: center;
+  gap: 30px;
 }
-#hero .rows {
+#hero .hero-container .row {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  flex-wrap: nowrap;
-  padding: 20px;
+  gap: 20px;
+  margin-bottom: 30px;
 }
-#hero .hero-text {
-  width: 50%;
-  align-self: flex-start;
-  padding: 20px;
+#hero .hero-container .row.row1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+#hero .hero-container .row.row1 .hero-text {
+  flex: 1;
+  width: 350px;
+  text-align: center;
+  min-width: 250px;
   margin: 10px;
 }
-#hero .hero-text h1 {
-  margin: 10px;
-  font-size: 3rem;
-  font-weight: 900;
+#hero .hero-container .row.row1 .hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
   color: rgb(37, 20, 20);
 }
-#hero .hero-text p {
-  padding: 10px;
+#hero .hero-container .row.row1 .hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
   color: #140900;
-  font-size: 1.5em;
 }
-#hero .hero-text .heroBtn {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 30px;
-  padding: 20px;
-  font-size: 1.5rem;
-  font-weight: 400;
-  border: 2px solid rgb(37, 20, 20);
-  border-radius: 10px;
-  cursor: pointer;
+#hero .hero-container .row.row1 .hero-text .heroBtn {
+  margin-top: 50px;
 }
-#hero .hero-text .heroBtn a {
+#hero .hero-container .row.row1 .hero-text .heroBtn a {
+  padding: 12px 25px;
+  background-color: transparent;
+  color: #140900;
+  border-radius: 5px;
   text-decoration: none;
-  color: #140900;
+  font-size: 1rem;
+  box-shadow: 3px 4px 25px #e7e7e7;
+  border: 1px solid #140900;
+  transition: background-color 0.3s ease;
 }
-#hero .hero-text .heroBtn:hover {
-  background-color: rgb(37, 20, 20);
-  color: rgba(244, 255, 254, 0.9176470588);
-  transition: 1s;
+#hero .hero-container .row.row1 .hero-text .heroBtn a:hover {
+  background-color: rgb(3.8947368421, 2.1052631579, 2.1052631579);
+  color: #fff;
 }
-#hero .hero-img #big {
-  height: 400px;
-  width: 500px;
-  border-radius: 10px;
-  position: relative;
-  z-index: 1;
+#hero .hero-container .row.row1 .hero-img {
+  flex: 1;
+  width: 400px;
   margin: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
-#hero .row1 {
-  margin: 15px 0 25px;
+#hero .hero-container .row.row2 {
+  display: flex;
+  width: 100%;
 }
-#hero h2 {
-  text-align: center;
-  margin: 30px 20px 10px;
-}
-
-.row2 img {
-  height: 150px;
+#hero .hero-container .row.row2 img {
   width: 200px;
   margin: 10px;
+  height: 170px;
   border-radius: 10px;
 }
 
 #features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 20px;
   padding: 15px;
   text-align: center;
-}
-
-#features {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
 }
 #features h3 {
   font-size: 2em;
@@ -282,15 +266,18 @@ html, body {
   justify-content: space-evenly;
   gap: 15px;
   grid-template-columns: repeat(3, minmax(250px, 2fr));
-  margin: 30px;
   padding: 20px;
   gap: 25px;
 }
 #features .features-box .feature {
-  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin: 10px;
   width: 300px;
   padding: 5px 10px;
-  margin: 25px;
+  margin: 15px 0;
   text-align: left;
   border-radius: 10px;
   cursor: pointer;
@@ -302,17 +289,9 @@ html, body {
 #features .features-box .feature p {
   font-size: 0.65em;
   color: rgba(17, 14, 14, 0.4784313725);
+  width: 150px;
 }
-
-.feature {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 10px;
-}
-.feature .fa-solid {
+#features .features-box .feature .fa-solid {
   font-size: 2rem;
   margin: 5px;
 }
@@ -322,16 +301,15 @@ html, body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  flex-wrap: wrap;
   justify-content: flex-start;
   margin: 25px 0;
 }
 .features-display img {
   height: 300px;
-  width: 550px;
+  max-width: 550px;
 }
 .features-display .fd-text {
-  width: 500px;
+  max-width: 500px;
   align-self: flex-start;
   padding: 30px;
   margin: 20px 0;
@@ -362,16 +340,14 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .testimonials .user {
-  width: 350px;
+  max-width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   align-items: flex-start;
   flex-direction: column;
   padding: 10px;
@@ -384,7 +360,6 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
 }
 .user #userId img {
   height: 50px;
@@ -433,16 +408,13 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .pricing-cards .card {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   justify-content: space-between;
   flex-direction: column;
   background-color: #fff;
@@ -504,132 +476,92 @@ html, body {
 
 @media (max-width: 700px) {
   body {
-    width: 100vw;
-    overflow-x: hidden;
+    font-size: 14px;
   }
-  header {
+  body header {
     display: grid;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 15px;
-    row-gap: 10px;
-    width: 100vw;
-    grid-template-columns: repeat(4, minmax(50px, auto));
+    grid-template-columns: repeat(4, auto);
+    place-items: center;
   }
-  header img {
-    align-self: flex-start;
-  }
-  header .openMenu {
-    background: none;
-    border: none;
-    color: #140900;
+  body header .openMenu, body header .closeMenu {
+    grid-row: 1/2;
+    grid-column: 3/-1;
     display: block;
-    grid-column: 4/4;
-    justify-self: center;
-    font-size: 2rem;
+    color: #140900;
+    font-size: 1.5rem;
+    justify-self: flex-end;
+    margin: 0 5px;
   }
-  header .navLinks {
+  body header .closeMenu {
+    color: #fff;
+  }
+  body header .navLinks {
     flex-direction: column;
-    justify-self: end;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     background-color: #140900;
-    width: 300px;
-    height: 100%;
+    height: 100vh;
+    width: 60vw;
+    font-size: 1.5rem;
     transform: translateX(100%);
-    transition: transform 0.5s ease;
-    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
   }
-  header .navLinks .closeMenu {
-    background: none;
-    border: none;
-    margin: 0 13px;
-    color: rgba(244, 255, 254, 0.9176470588);
-    display: block;
-    font-size: 1.8rem;
+  body header .navLinks li a {
+    color: #fff;
   }
-  header .navLinks li {
-    width: 80%;
-    border-bottom: 1px solid #e7e7e7;
-  }
-  header .navLinks li:last-child {
-    border-bottom: none;
-  }
-  header .navLinks li a {
-    color: rgba(244, 255, 254, 0.9176470588);
-  }
-  header .navLinks.active {
+  body header .active {
     transform: translateX(0);
   }
-  header a {
-    grid-area: 1/3/1/3;
+  body header a {
+    grid-row: 1/2;
+    grid-column: 3/4;
   }
-  header a div {
-    justify-self: end;
+  body #hero .hero-container .row {
+    margin-bottom: 30px;
   }
-  #hero .rows {
-    flex-wrap: wrap;
+  body #hero .hero-container .row.row1 .hero-text {
+    margin: 0;
+    width: 250px;
   }
-  #hero .hero-text {
-    width: auto;
+  body #hero .hero-container .row.row2 img {
+    width: 200px;
+    margin: 5px;
   }
-  #hero .hero-text h1 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-    text-align: center;
+  body #features {
+    display: block;
   }
-  #hero .hero-text p {
-    font-size: 1rem;
-    padding: 0;
-    text-align: center;
-  }
-  #hero .hero-text .heroBtn {
-    width: 150px;
-    font-size: 1rem;
-    margin: 20px auto;
-  }
-  #hero .hero-img #big {
-    width: 300px;
-  }
-  #features .features-box {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
-    margin: 25px 0;
-  }
-  #features .features-box .feature {
+  body #features .features-box {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    text-align: center;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 10px 0;
-  }
-  .features-display {
     flex-direction: column;
-    align-self: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    flex-wrap: nowrap;
+  }
+  body #features .features-box .feature {
+    min-width: 200px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    width: 100%;
   }
-  .features-display img {
-    width: 300px;
-  }
-  .features-display .fd-text {
-    width: 300px;
-    text-align: center;
-  }
-  .testimonials {
+  body #features .features-display {
     flex-direction: column;
-  }
-  .testimonials .user {
-    width: 300px;
-    margin: 10px 0;
-  }
-  .pricing-cards {
-    flex-direction: column;
-    align-self: center;
+    align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
-  .pricing-cards .card {
-    margin: 10px;
+  body #features .features-display img {
+    width: 80%;
+  }
+  body .testimonials {
+    flex-direction: column;
+  }
+  body #pricing .pricing-cards {
+    flex-direction: column;
   }
 }
 body {
