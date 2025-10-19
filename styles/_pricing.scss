@@ -1,0 +1,88 @@
+@import 'mixins';
+@import 'variables';
+
+#pricing{
+    text-align: center;
+    h4{
+        font-size: 1.5rem;
+        color: $solid-color1;
+        margin-bottom: 10px
+    }
+    p{
+        margin: 15px;
+    }
+}
+#pricing{
+  margin: 25px;
+    .pricing-cards{
+        @include flexCenter;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+.pricing-cards{
+    .card{
+        @include flexCenter;
+        justify-content: space-between;
+        flex-direction: column;
+        background-color: $Pwhite;
+        height: 450px;
+        width: 250px;
+        margin: 15px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: $shadow1;
+        transition: transform 0.3s ease;
+        &:hover{
+            box-shadow: $shadow2;
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+    }
+}
+.card{
+    h5{
+        font-size: 0.8em;
+        font-family: 'Gill Sans','Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 15px;
+        cursor: pointer;
+    }
+    h3{
+        font-size: 1.5em;
+        font-weight: 700;
+        margin: 0 auto 10px;
+        cursor: pointer;
+    }
+    ul{
+        margin: 20px;
+        list-style: none;
+        color: $solid-color1;
+        cursor: pointer;
+    }
+}
+.card{
+    ul{
+        li{
+            margin: 15px;
+            font-size: 0.8em;
+            font-weight: bolder;
+        }
+    }
+    button{
+        justify-self: flex-end;
+        padding: 12px 24px;
+        background: transparent;
+        color: $solid-color2;
+        border: 2px solid $solid-color2;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        &:hover{
+        background: $solid-color2;
+        color: $text;
+        transform: scale(1.05);
+        transition: 1s;
+        }
+    }
+}

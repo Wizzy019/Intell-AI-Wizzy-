@@ -1,0 +1,79 @@
+@import 'mixins';
+@import 'variables';
+
+#features{
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+}
+#features{
+    @include flexCenter;
+    flex-direction: column;
+    justify-content: space-between;
+    h3{
+        font-size: 2em;
+        font-weight: 400;
+        color: $solid-color1;
+    }
+    .features-box{
+        @include grid;
+        grid-template-columns: repeat(3,minmax(250px,2fr));
+        margin: 30px;
+        padding: 20px;
+        gap: 25px;
+        .feature{
+            height: 40px;
+            width: 300px;
+            padding: 5px 10px;
+            margin: 25px;
+            text-align: left;
+            border-radius: 10px;
+            cursor: pointer;
+            h5{
+            font-size: 0.9rem;
+            color: $solid-color2;
+            }
+            p{
+            font-size: 0.65em;
+            color: $textLte;
+            }
+        }
+        
+    }
+}
+.feature{
+    @include flexCenter;
+    justify-content: space-between;
+    margin: 10px;
+    .fa-solid{
+        font-size: 2rem;
+        margin: 5px;
+    }
+}
+.features-display{
+    @include flexCenter;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 25px 0;
+    img{
+        height: 300px;
+        width: 550px;
+    }
+    .fd-text{
+        width: 500px;
+        align-self: flex-start;
+        padding: 30px;
+        margin: 20px 0;
+        text-align: start;
+        h4{
+            font-size: 1.5em;
+            color: $solid-color1;
+            margin: 10px;
+        }
+        p{
+            font-size: 1em;
+            color: $solid-color1;
+            padding: 0 10px;
+        }
+    }
+}

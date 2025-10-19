@@ -1,0 +1,141 @@
+@import 'mixins';
+@import 'variables';
+
+@media (max-width: 700px) {
+    body{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+   header{
+    @include grid;
+    row-gap: 10px;
+    width: 100vw;
+    grid-template-columns: repeat(4,minmax(50px,auto));
+   }
+   header{
+    img{
+        align-self: flex-start;
+    }
+    .openMenu{
+        background: none;
+        border: none;
+        color: $solid-color2;
+        display: block;
+        grid-column: 4/4;
+        justify-self: center;
+        font-size: 2rem;
+    }
+    .navLinks{
+        flex-direction: column;
+        justify-self: end;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: $solid-color2;
+        width: 300px;
+        height: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+        z-index: 999;
+        .closeMenu{
+            background: none;
+            border: none;
+            margin: 0 13px;
+            color: $text;
+            display: block;
+            font-size: 1.8rem;
+        }
+        li{
+            width: 80%;
+            border-bottom: 1px solid $solid-light;  
+            &:last-child{
+                border-bottom: none
+            }  
+            a{
+                color: $text;
+            }
+        }
+    }
+    .navLinks.active{
+        transform: translateX(0);
+
+    }
+    a{
+        grid-area: 1/3/1/3;
+        div{
+            justify-self: end;
+        }
+    }
+   }
+   #hero{
+    .rows{
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    .hero-text{
+        width: auto;
+        h1{
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-align: center;
+        }
+        p{
+            font-size: 1rem;
+            padding: 0;
+            text-align: center;
+        }
+        .heroBtn{
+            width: 150px;
+            font-size: 1rem;
+            margin: 20px auto;
+        }
+    }
+    .hero-img{
+        #big{
+            width: 300px;
+        }
+    }
+   }
+   #features{
+    .features-box{
+        grid-template-columns: repeat(auto-fit,(minmax(250px,2fr)));
+        margin: 25px 0;
+        .feature{
+            justify-content: center;
+            text-align: center;
+            width: fit-content;
+            margin: 10px 0;
+        }
+    }
+   }
+   .features-display{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: 300px;
+    }
+    .fd-text{
+        width: 300px;
+        text-align: center;
+    }
+   }
+    .testimonials{
+        flex-direction: column;
+        .user{
+            width: 300px;
+            margin: 10px 0;
+        }
+    }
+    .pricing-cards{
+        flex-direction: column;
+        align-self: center;
+        justify-content: space-between;
+        .card{
+            margin: 10px;
+        }
+    }
+}
+body{
+    overflow-x: hidden;
+}
